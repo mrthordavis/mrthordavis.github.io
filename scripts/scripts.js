@@ -23,7 +23,7 @@ async function readSheet() {
         const data = await response.json();
 
         const date = new Date();
-        const day = date.getDate() + 100;
+        const day = date.getDate();
 
         let row = data.values.find(row => row[0]?.match(/d\. (\d+)/)?.[1] == day); //Tak Chat!
         if (!row) {
