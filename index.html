@@ -6,21 +6,21 @@
     <link rel="icon" type="image/png" href="images/GL6Header.png">
 
     <style>
-        html, body {
-            margin: 0;
-            min-height: 100%;
-            overscroll-behavior: none;
-        }
-        body {
-            min-height: 100vh;
-            margin: 0;
+        html  {
+            height: 100vh;
             background: linear-gradient(
                     135deg,
                     #6fa8ff 0%,
                     #f2b38a 50%,
                     #ff7a18 100%
             );
+            overscroll-behavior: none;
+        }
+        body {
+            margin: 0;
             text-align: center;
+            height: 100%;
+            background: inherit;
         }
         h1 {
             font-size: 75px;
@@ -33,11 +33,19 @@
             font-weight: bold;
             color: black;
         }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 10px;
+            line-height: 1.6;
+            text-align: center;
+        }
     </style>
 </head>
 
 
 <body>
+<div class="container">
 
 <h1>
     GL6.dk
@@ -59,6 +67,6 @@
 <br>
 <br>
 <a href="pages/thors-hjoerne.html">Thor's IT-hjørne</a>
-
+</div>
 </body>
 </html>
