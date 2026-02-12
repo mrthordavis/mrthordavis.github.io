@@ -35,6 +35,6 @@ async function readSheet() {
         document.getElementById("time").textContent = "Spisetid: " + row[7];
         document.getElementById("amount").textContent = "Antal: " + row[30];
     } catch (err) {
-        document.getElementById("food").textContent = "Something went wrong";
+        document.getElementById("food").textContent = "Ingen madklubsdata for i dag";
     }
 }
