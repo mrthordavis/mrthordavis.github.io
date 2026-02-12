@@ -4,20 +4,33 @@
     <meta charset="UTF-8">
     <title>Dagens madklub</title>
     <link rel="icon" type="image/png" href="../images/GL6Header.png">
+    <style>
+        body {
+            margin: 40px auto;
+            max-width: 650px;
+            line-heigt: 1.6;
+            font-size: 18px;
+            color: #444;
+            padding: 0 10px;
+            text-align: center;
+        }
+    </style>
 </head>
-<style>
-    html, body {
-        overscroll-behavior: none;
-    }
-    body {
-        background-image: url("../images/GL6Baggrund.png");
-        background-size: cover;
-        background-position: center top;
-        background-repeat: no-repeat;
-        background-color: #f57133;
-    }
-</style>
+
 <body>
+<h1 id="date">
+
+</h1>
+<h1 id="food">
+    Hvad er der til madklub i dag?
+</h1>
+<h2 id="chef">
+
+</h2>
+<button onClick="readSheet()">Lad os finde ud af det</button>
+
+<script src="../scripts/scripts.js"></script>
+
 
 </body>
 </html>
