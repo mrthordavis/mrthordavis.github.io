@@ -13,7 +13,7 @@ const spreadsheetID = "1GYe7UtTsZEgB4V4kOd_hTGG1DAnmLLK3P6xsl7uJN3o";
 const apiKey = "AIzaSyD9FBj8frnBTB4dNa_RLFmEIEphsDTZVJ0";
 
 //Lav en function der henter månedens range
-const range = encodeURIComponent("'Februar 26'!A11:AE31");
+const range = getMonthRange();
 
 const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetID}/values/${range}?key=${apiKey}`;
 
@@ -23,7 +23,7 @@ async function readSheet() {
         const data = await response.json();
 
         const date = new Date();
-        const day = date.getDate() + 100;
+        const day = date.getDate();
 
         let row = data.values.find(row => row[0]?.match(/d\. (\d+)/)?.[1] == day); //Tak Chat!
         if (!row) {
@@ -47,4 +47,25 @@ async function readSheet() {
     } catch (err) {
         document.getElementById("food").textContent = "Ingen madklubsdata for i dag";
     }
+}
+
+function getMonthRange() {
+    const months = new Map();
+
+    months.set(0, encodeURIComponent("'Januar 26'!A11:AE31"));
+    months.set(1, encodeURIComponent("'Februar 26'!A11:AE31"));
+    months.set(2, encodeURIComponent("'Marts 26'!A11:AE31"));
+    months.set(3, encodeURIComponent("'April 26'!A11:AE31"));
+    months.set(4, encodeURIComponent("'Maj 26'!A11:AE31"))
+    months.set(5, encodeURIComponent("'Juni 26'!A11:AE31"));
+    months.set(6, encodeURIComponent("'Juli 26'!A11:AE31"));
+    months.set(7, encodeURIComponent("'August 26'!A11:AE31"));
+    months.set(8, encodeURIComponent("'September 26'!A11:AE31"));
+    months.set(9, encodeURIComponent("'Oktober 26'!A11:AE31"));
+    months.set(10, encodeURIComponent("'November 26'!A11:AE31"));
+    months.set(11, encodeURIComponent("'December 26'!A11:AE31"));
+
+    const date = new Date();
+    const month = date.getMonth();
+    return months.get(month);
 }
