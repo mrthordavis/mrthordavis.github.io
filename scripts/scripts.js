@@ -69,3 +69,30 @@ async function readSheet() {
         document.getElementById("food").textContent = "Ingen madklubsdata for i dag";
     }
 }
+
+async function stravaTest() {
+
+    const accessToken = "09d9851e8a0a05fd7bedebd03fcbca787e53e609"; // ⚠️ only for testing, not safe in production
+    const clubId = 1959294;
+
+    try {
+        const response = await fetch(`https://www.strava.com/api/v3/clubs/${clubId}/activities?per_page=5&page=1`, {
+            headers: {
+                'Authorization': `Bearer ${accessToken}`
+            }
+        });
+
+        const activities = await response.json();
+
+        activities.forEach(activity => {
+            const athleteName = `${activity.athlete.firstname} ${activity.athlete.lastname}`;
+            const activityName = activity.name;
+            const distance = (activity.distance / 1000).toFixed(2);
+
+            document.getElementById("activities").innerHTML += `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${athleteName} har løbet ${distance}km: ${activityName}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`;
+        });
+
+    } catch (err) {
+        console.error("ERROR:", err);
+    }
+}

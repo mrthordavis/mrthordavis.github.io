@@ -40,11 +40,42 @@
             line-height: 1.5;
             text-align: center;
         }
+
+        .ticker-container {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: rgba(17, 17, 17, 0.5);
+            color: #fff;
+            overflow: hidden;
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Scrolling text */
+        .ticker-text {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%; /* Start off-screen to the right */
+            animation: scroll 45s linear infinite;
+        }
+
+        /* Keyframes for scrolling */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
     </style>
 </head>
 
 
-<body>
+<body onload="stravaTest()">
 <div class="container">
 
 <h1>
@@ -68,5 +99,14 @@
 <br>
 <a href="pages/thors-hjoerne.html">Thor's IT-hjørne</a>
 </div>
+
+<div class="ticker-container">
+    <div class="ticker-text">
+        <h5 id="activities">Seneste GL6 Strava opdateringer:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+    </div>
+</div>
+
+<script src="scripts/scripts.js"></script>
+
 </body>
 </html>
