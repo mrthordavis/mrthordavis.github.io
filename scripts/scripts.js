@@ -72,7 +72,7 @@ async function readSheet() {
 
 async function stravaTest() {
 
-    const accessToken = "69753936ee63277dc7a999e74cf6a2a898604c27"; 
+    const accessToken = "e0e7dc1171ad33a2354bfe1fe78496f153040775"; 
     const clubId = 1959294;
 
     try {
