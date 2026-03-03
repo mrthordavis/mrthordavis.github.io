@@ -123,7 +123,7 @@ async function getValidAccessToken() {
 let stravaAuth = {
     access_token: "d83ecd3b406da3a8e27d2bfab34a0be7819800ea",
     refresh_token: "405fdf74e8a792c396cb7f949f55e7b64223d880",
-    expires_at: 1772553312 // unix timestamp
+    expires_at: 1772587181 // unix timestamp
 };
 
 async function stravaTest() {
