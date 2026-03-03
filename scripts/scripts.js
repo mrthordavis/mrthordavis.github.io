@@ -87,8 +87,8 @@ async function refreshStravaToken(refreshToken) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            client_id: process.env.STRAVA_CLIENT_ID,
-            client_secret: process.env.STRAVA_CLIENT_SECRET,
+            client_id: "200710",
+            client_secret: "a8fcf4b5271c1c0cd56d8d9f1d0bfa4e16770d34",
             grant_type: 'refresh_token',
             refresh_token: refreshToken,
         }),
