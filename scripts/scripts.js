@@ -1,7 +1,7 @@
 function myFunction() {
     const password = document.getElementById("password").value;
     if (password == "Thor") {
-        window.location.href = "it-grotten.html";
+        window.location.href = "../pages/it-grotten.html";
     } else {
         document.getElementById("password").value = "";
         document.getElementById("password").placeholder = "Try again";
