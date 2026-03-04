@@ -7,18 +7,24 @@
 
     <style>
         body {
-            background-image: url("../images/Loebeklub.jpeg");
-            background-size: cover;
-
-            margin: 40px auto;
             font-size: 18px;
-            color: #444;
-            padding: 0 10px;
+            color: #1e1e1e;
+            background-color: #FFD3A5;
         }
         h1 {
+            color: #1e1e1e;
+            margin: 250px;
             max-width: 650px;
             text-align: center;
             margin: 40px auto;
+        }
+        .activities {
+            display: flex;
+            justify-content: space-around;
+        }
+        .text {
+            display: flex;
+            justify-content: space-around;
         }
     </style>
 </head>
@@ -26,11 +32,19 @@
 <body>
 
 <h1>
-    Under ombygning, men næste morgenløb er på GL6 d. 7/3 kl 9:00
+    Næste sjette etage morgenløb:<br>d. 7/3 kl 9:00 på GL6
 </h1>
-<!--<iframe allowtransparency='true' frameborder='0' height='454' scrolling='no' src='https://www.strava.com/clubs/1959294/latest-rides/902804159bbeff6d52934db276a59b1dd25820e5?show_rides=true' width='300'></iframe>
-<iframe allowtransparency='true' frameborder='0' height='160' scrolling='no' src='https://www.strava.com/clubs/1959294/latest-rides/902804159bbeff6d52934db276a59b1dd25820e5?show_rides=false' width='300'></iframe>
--->
+
+<div class="text">
+    <h2>Seneste GL6 løbeture</h2>
+    <h2>6. etage morgenløb</h2>
+</div>
+
+<div class="activities">
+    <iframe allowtransparency='true' frameborder='5' scrolling='no' src='https://www.strava.com/clubs/1959294/latest-rides/902804159bbeff6d52934db276a59b1dd25820e5?show_rides=true' width='650' height='450'></iframe>
+    <img src="../images/Loebeklub.jpeg" width="600" height="450" style="border:5px outset silver;">
+</div>
+
 </body>
 
 </html>
